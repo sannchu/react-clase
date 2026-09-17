@@ -21,7 +21,7 @@ function LoginRegistro() {
             <div className="row">
 
                 <div className="col-md-6">
-                    <img src="/imagenes/Captura de pantalla 2026-09-17 190515.png" alt="Captura" />
+                    <img src="/imagenes/Captura de pantalla 2026-09-17 190515.png" alt="Captura" width="516"  />
                 </div>
                 <div className="col-md-6">
                     <h2>Crear cuenta</h2>
