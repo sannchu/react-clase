@@ -1,6 +1,7 @@
 import './Layout.css'
 import Header from './Header/Header.jsx'
 import Footer from './Footer/Footer.jsx'
+import { Outlet } from 'react-router'
 
 function Layout(){
     return (
@@ -14,8 +15,11 @@ function Layout(){
 
             <div className="row">
                 <div className="col">
-                    {/*...aqui se carga el contenido variable del layout en funcion de la ruta... */}
-                    <p>Contenido variable del layout....</p>
+                    {/*...aqui se carga el contenido variable del layout en funcion de la ruta... 
+                        se hace usando el componente Outlet de react-router, que es un placeholder para el contenido de la ruta hija que se renderiza dentro del layout...
+                    */}
+                    
+                    <Outlet />
                 </div>
             </div>
 
@@ -25,7 +29,6 @@ function Layout(){
                     <Footer />
                 </div>
             </div>
-
 
         </div>
     )

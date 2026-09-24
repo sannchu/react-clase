@@ -7,7 +7,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 //import App from './App.jsx'
 import LoginRegistro from './componentes/zonaCliente/registro/LoginRegistro.jsx'
 import Layout from './componentes/zonaTienda/Layout/Layout.jsx'
-
+import Home from './componentes/zonaTienda/Home/Home.jsx'
+import ProductosCat from './componentes/zonaTienda/Productos/ProductosCat.jsx'
 //#region ------- configuracion modulo de enrutamiento react:  paquete react-router ------
 
 //1ºpaso: instalar el paquete react-router-dom: npm install react-router --save
@@ -21,9 +22,18 @@ import Layout from './componentes/zonaTienda/Layout/Layout.jsx'
 
   const routerObjects=createBrowserRouter(
     [
-      {path: '/', element: <Layout /> },
-
+      //---objeto route para layout principal y rutas de productos por categorias como rutas hijas...
+      {  
+         element: <Layout />,
+         children:[
+          { path:'/', element: <Home/>},
+          { path:'Productos', element: <ProductosCat/> }
+         ]
+        }, 
+      //--- objeto route para la ruta de login y registro de clientes
       { path: '/Cliente/LoginRegistro', element: <LoginRegistro /> },
+      //--- objeto route para el dashboard de clientes y rutas hijas para las diferentes secciones del dashboard
+      //{}
     ] //<---- array de objetos Route de react-router
   )
 
@@ -39,4 +49,3 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={routerObjects} />
   </StrictMode>,
 ) 
-

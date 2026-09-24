@@ -1,9 +1,21 @@
 import './Header.css'
+import OffCanvasCats from './OffCanvasCategorias/OffCanvasCats.jsx'
 
 function Header(){
     return (
-        <div className="d-flex flex-row justify-content-center align-items-center header">
-            <h1>Cabecera de la tienda</h1>
+        <div className="container">
+            <div className="row">
+                <div className="col-2">
+                    <img src="/imagenes/miniLogo_pccomponentes.png" alt="logo" className="img-fluid"/>
+                </div>
+                
+                {/* offcanvas de bootstrap para cargar categorias... */}
+                <div className="col-2"><OffCanvasCats/></div>
+
+
+                <div className="col-4"></div>
+                <div className="col-4"></div>
+            </div>
         </div>
     )
 }
