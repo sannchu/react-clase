@@ -6,7 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 
 //import App from './App.jsx'
 import LoginRegistro from './componentes/zonaCliente/registro/LoginRegistro.jsx'
-
+import Layout from './componentes/zonaTienda/Layout/Layout.jsx'
 
 //#region ------- configuracion modulo de enrutamiento react:  paquete react-router ------
 
@@ -21,6 +21,8 @@ import LoginRegistro from './componentes/zonaCliente/registro/LoginRegistro.jsx'
 
   const routerObjects=createBrowserRouter(
     [
+      {path: '/', element: <Layout /> },
+
       { path: '/Cliente/LoginRegistro', element: <LoginRegistro /> },
     ] //<---- array de objetos Route de react-router
   )
