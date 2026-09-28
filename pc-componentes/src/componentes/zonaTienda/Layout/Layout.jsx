@@ -15,11 +15,12 @@ function Layout(){
 
             <div className="row">
                 <div className="col">
-                    {/*...aqui se carga el contenido variable del layout en funcion de la ruta... 
-                        se hace usando el componente Outlet de react-router, que es un placeholder para el contenido de la ruta hija que se renderiza dentro del layout...
+                    {/*
+                        ...aqui se carga el contenido variable del layout en funcion de la ruta... 
+                        se hace usando el componente <Outlet /> de react-router, que renderiza el componente hijo 
+                        correspondiente a la ruta actual cargada en el navegador
                     */}
-                    
-                    <Outlet />
+                    <Outlet /> 
                 </div>
             </div>
 
@@ -30,8 +31,9 @@ function Layout(){
                 </div>
             </div>
 
+
         </div>
     )
 }
 
-export default Layout 
+export default Layout

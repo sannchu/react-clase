@@ -27,7 +27,8 @@ import ProductosCat from './componentes/zonaTienda/Productos/ProductosCat.jsx'
          element: <Layout />,
          children:[
           { path:'/', element: <Home/>},
-          { path:'Productos', element: <ProductosCat/> }
+          { path:'Productos/Categoria/:nombreCat', element: <ProductosCat/> } //<---- objeto Route con segmento variable para usar: useParams()
+          // { path:'Productos/Categoria', element: <ProductosCat/> } //<------------ objeto Route con segmentos fijos y valores variables pasados por queryString para usar: useSearchParams()
          ]
         }, 
       //--- objeto route para la ruta de login y registro de clientes
