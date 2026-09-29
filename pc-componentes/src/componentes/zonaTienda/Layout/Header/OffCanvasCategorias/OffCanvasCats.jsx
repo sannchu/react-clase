@@ -1,12 +1,20 @@
 import './OffCanvas.css'
+import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router'
 
 function OffCanvasCats(){
+    
+    const [categorias, setCategorias] = useState([])
+    useEffect(()=>{ //<------------------------------------ este hook se ejecuta una sola vez cuando se monta el componente, es decir cuando se carga por primera vez en la pagina
+        //invocar a servicio para cargar categorias principales
+        setCategorias(['Componentes', 'Ordenadores', 'Perifericos', 'Consolas'])
+    }, [])
+    
     const navigate = useNavigate()
 
     return (
         <div className="mt-5 mb-4">
-            <button className="btn btn-otuline-secondary" 
+            <button className="btn btn-outline-secondary" 
                     type="button" 
                     data-bs-toggle="offcanvas" 
                     data-bs-target="#offcanvasWithBothOptions" 
@@ -29,15 +37,11 @@ function OffCanvasCats(){
                     <div className="offcanvas-body">
                         <h3><strong>Categorias</strong></h3>
                         <p>....cargar categorias principales invocando a servicio....</p>
-                        <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria?categoria=Componentes') }>Componentes</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria?categoria=Ordenadores') }>Ordenadores</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria?categoria=Perifericos') }>Perifericos</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria?categoria=Consolas') }>Consolas</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria/Componentes') }>Componentes</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria/Ordenadores') }>Ordenadores</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria/Perifericos') }>Perifericos</button>
-                            <button type="button" class="list-group-item list-group-item-action" onClick={ ()=> navigate('/Productos/Categoria/Consolas') }>Consolas</button>
+                        <div className="list-group">
+                            <button type="button" className="list-group-item list-group-item-action" onClick={() => navigate('/Productos/Categoria?nombreCat=Componentes')}>Componentes</button>
+                            <button type="button" className="list-group-item list-group-item-action" onClick={() => navigate('/Productos/Categoria?nombreCat=Ordenadores')}>Ordenadores</button>
+                            <button type="button" className="list-group-item list-group-item-action" onClick={() => navigate('/Productos/Categoria?nombreCat=Perifericos')}>Perifericos</button>
+                            <button type="button" className="list-group-item list-group-item-action" onClick={() => navigate('/Productos/Categoria?nombreCat=Consolas')}>Consolas</button>
                         
                         </div>                        
                     </div>

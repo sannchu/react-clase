@@ -6,8 +6,7 @@ function Header(){
   const saltarAUrl=useNavigate(); //<--- el hook useNavigate() de react-router nos permite saltar a una url si recargar toda la app desde el principio
                                   //invoca al modulo de enrutamiento y carga componente asociado a esa url
   
-//console.log
-('valor de la variable satarAUrl: ', saltarAUrl)
+  //console.log('valor de la variable satarAUrl: ', saltarAUrl)
 
 
     return (
